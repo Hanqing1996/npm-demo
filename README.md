@@ -2,6 +2,10 @@
 
 #### 其它
 * 永远别用cnpm!!!!
+* 配置淘宝npm镜像
+```
+npm config set registry https://registry.npm.taobao.org
+```
 * 如果一个包是给用户（用这个组件的程序员）使用的
 ```
 npm i vue
