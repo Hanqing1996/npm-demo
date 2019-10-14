@@ -15,11 +15,27 @@ npm i vue
 npm i -D parcel-bundler
 ```  
 
+#### 发布 npm 包（需FQ）
+1. 更新 package.json
+2. 在 package.json 里将版本号改为 0.0.1，等我们做完了再改成 1.0.0
+3. 创建 index.js，在 index.js 里将你想要导出的内容全部导出
+   * export {Button,ButtonGroup,Icon}
+4. 去 https://www.npmjs.com/ 注册一个账户
+5. 确认一下邮箱（必须）
+6. 在项目根目录运行 npm adduser
+7. 如果错误提示里面含有 https://registry.npm.taobao.org 则说明你的 npm 源目前为淘宝源，需要更换为 npm 官方源（https://registry.npmjs.org/）
+   * npm config list,修改npmrc实现
+8. 运行 npm publish
+   * 报错：You do not have permission to publish "package-demo".说明包重名了，在package.json修改name
+   * 允许先publish,再push
+   * 每次 bump version 后记得修改 package.json,再publish
+
 #### npm root -g
 显示全局安装的包的路径
 
 #### npm install
 * 按照package.json初始化项目
+* 会把包放入node_modules目录
 * package-lock.json 内容相比 package.json 有缺失时（cnpm 的坑），可用该命令更新 package-lock.json
 
 #### npm install X -g
@@ -49,6 +65,6 @@ npm i -D parcel-bundler
 * 如果 package lock 里面依赖和 package.json 不一致， npm ci 会报错并且退出， 而不是更新 package lock 文件
 * 它不会改变 package.json 或者任何 package-locks
 
-* npm run
-    * 在 package.json 的 scripts 属性中加入命令（例如："foo": "echo foo"）就可以通过 npm run foo 运行对应命令。
-    * 这是 npm 提供的一个很方便的运行项目相关的自动化任务的机制，
+#### npm run
+* 在 package.json 的 scripts 属性中加入命令（例如："foo": "echo foo"）就可以通过 npm run foo 运行对应命令。
+* 这是 npm 提供的一个很方便的运行项目相关的自动化任务的机制，
