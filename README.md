@@ -20,6 +20,9 @@ npm i -D parcel-bundler
 #### npm root -g
 显示全局安装的包的路径
 
+#### npm init
+* 生成package.json
+
 #### npm install
 * 按照package.json初始化项目
 * 会把包放入node_modules目录
