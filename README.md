@@ -58,3 +58,5 @@ npm i -D parcel-bundler
 #### npm run
 * 在 package.json 的 scripts 属性中加入命令（例如："foo": "echo foo"）就可以通过 npm run foo 运行对应命令。
 * 这是 npm 提供的一个很方便的运行项目相关的自动化任务的机制，
+---
+* [npm WARN checkPermissions Missing write access](https://stackoverflow.com/questions/45106627/npm-checkpermissions-missing-write-access-to-node-modules-is)
