@@ -60,3 +60,10 @@ npm i -D parcel-bundler
 * 这是 npm 提供的一个很方便的运行项目相关的自动化任务的机制，
 ---
 * [npm WARN checkPermissions Missing write access](https://stackoverflow.com/questions/45106627/npm-checkpermissions-missing-write-access-to-node-modules-is)
+
+#### [npx](https://zhuanlan.zhihu.com/p/27840803)
+
+#### 查看全局安装过的包
+```
+npm list -g --depth 0
+```
