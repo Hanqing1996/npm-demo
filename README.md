@@ -20,7 +20,7 @@ npm i -D parcel-bundler
 #### npm root -g
 显示全局安装的包的路径
 
-#### npm init
+#### npm init(npm install 前一定要npm init,因为npm install 不会自动生成 package.json)
 * 生成package.json
 
 #### npm install
