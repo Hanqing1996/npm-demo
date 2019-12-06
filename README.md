@@ -67,3 +67,25 @@ npm i -D parcel-bundler
 ```
 npm list -g --depth 0
 ```
+
+#### yarn
+1. install
+```
+yarn add x --dev
+```
+等价于
+```
+npm install -D x
+```
+2. 执行script命令
+```
+  "scripts": {
+    "build":"rm -rf dist;webpack",
+  },
+
+yarn build
+```
+等价于
+```
+npm run build
+```
