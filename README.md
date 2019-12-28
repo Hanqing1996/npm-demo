@@ -89,3 +89,13 @@ yarn build
 ```
 npm run build
 ```
+
+#### 只有npm的情况下如何根据yarn.lock安装依赖
+1. 全局安装yarn
+```
+npm install yarn -g
+```
+2. 安装依赖
+```
+yarn install
+```
