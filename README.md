@@ -89,7 +89,7 @@ yarn build
 ```
 npm run build
 ```
-
+---
 #### 只有npm的情况下如何根据yarn.lock安装依赖
 1. 全局安装yarn
 ```
@@ -99,3 +99,5 @@ npm install yarn -g
 ```
 yarn install
 ```
+---
+#### [安装依赖，yarn.lock和package.json都要有](https://yarnpkg.com/lang/en/docs/cli/install/)
