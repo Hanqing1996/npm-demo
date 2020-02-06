@@ -102,3 +102,15 @@ yarn install
 ```
 ---
 #### [安装依赖，yarn.lock和package.json都要有](https://yarnpkg.com/lang/en/docs/cli/install/)
+
+#### 安装并使用 http-server
+* 安装
+```
+npm install -D http-server
+```
+* 使用
+```
+// 在 index.html 目录下执行 
+http-server . -c-1 
+```
+
