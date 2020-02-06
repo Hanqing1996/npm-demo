@@ -5,6 +5,7 @@
 * 配置淘宝npm镜像
 ```
 npm config set registry https://registry.npm.taobao.org
+npm config delete registry //销毁
 ```
 * 如果一个包是给用户（用这个组件的程序员）使用的
 ```
