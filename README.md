@@ -1,5 +1,8 @@
 # npm笔记
 
+#### npm info babel
+查看 babel 的版本信息（latest,next）
+
 #### npm init -y
 有默认选项的 npm init,推荐用这个
 
