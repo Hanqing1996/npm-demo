@@ -1,5 +1,8 @@
 # npm笔记
 
+#### npm init -y
+有默认选项的 npm init,推荐用这个
+
 #### 其它
 * 永远别用cnpm!!!!
 * 配置淘宝npm镜像
