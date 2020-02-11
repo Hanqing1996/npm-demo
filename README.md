@@ -2,6 +2,9 @@
 
 #### npm info babel
 查看 babel 的版本信息（latest,next）
+    * latest:最新版本
+    * next:下一个版本（计划中）
+    * old:当前项目中包的上一个版本
 
 #### npm init -y
 有默认选项的 npm init,推荐用这个
