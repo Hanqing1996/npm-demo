@@ -141,4 +141,11 @@ npm install -D http-server
 // 在 index.html 目录下执行 
 http-server . -c-1 
 ```
-
+ 
+#### npm init -y 之后可以直接 yarn add
+```
+npm init -y
+```
+```
+yarn add webpack-dev-server -D
+```
