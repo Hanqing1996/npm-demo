@@ -154,3 +154,5 @@ rm -rf yarn.lock
 ```
 yarn install
 ```
+#### yarn 的安装
+应该通过 yarn.msi 而非 npm 安装
