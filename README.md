@@ -119,15 +119,6 @@ yarn build
 npm run build
 ```
 ---
-#### 只有npm的情况下如何根据yarn.lock安装依赖
-1. 全局安装yarn
-```
-npm install yarn -g
-```
-2. 安装依赖
-```
-yarn install
-```
 ---
 #### [安装依赖，yarn.lock和package.json都要有](https://yarnpkg.com/lang/en/docs/cli/install/)
 
@@ -148,4 +139,18 @@ npm init -y
 ```
 ```
 yarn add webpack-dev-server -D
+```
+
+#### 更新依赖
+1. 删除 node_modules
+```
+rm -rf node_modules
+```
+2. 删除 yarn.lock
+```
+rm -rf yarn.lock
+```
+3. 安装依赖
+```
+yarn install
 ```
