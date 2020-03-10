@@ -1,5 +1,22 @@
 # npm笔记
 
+#### 卸载用 npm 安装的 yarn
+```
+npx npm uninstall -g yarn
+```
+
+#### 那么应该怎么安装 yarn 呢
+[用 yarn.msi](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
+
+#### 用 yarn 安装全局依赖
+> npx 的作用是自动去找 yarn 的安装目录，如果不用 npx,你就要去yarn 的安装目录下执行 yarn global add @vue/cli@4.1.2
+```
+npx yarn global add @vue/cli@4.1.2
+```
+#### 用 yarn 卸载全局依赖
+```
+yarn global remove @vue/cli
+```
 #### npm info babel
 查看 babel 的版本信息（latest,next）
     * latest:最新版本
