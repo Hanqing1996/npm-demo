@@ -18,10 +18,18 @@ npx yarn global add @vue/cli@4.1.2
 yarn global remove @vue/cli
 ```
 #### npm info babel
-查看 babel 的版本信息（latest,next）
-    * latest:最新版本
-    * next:下一个版本（计划中）
-    * old:当前项目中包的上一个版本
+查看 babel 的官方版本信息
+    * latest:官方最新版本
+    * next:官方下一个版本（计划中）
+    * old:官方上一个版本
+
+#### npm ls babel
+查看本地项目 babel 版本信息 
+```
+$ npm ls babel
+C:\Users\zhq\Desktop\test
+`-- babel@5.8.38
+```
 
 #### npm init -y
 有默认选项的 npm init,推荐用这个
@@ -150,10 +158,8 @@ npm install -D http-server
 http-server . -c-1 
 ```
  
-#### npm init -y 之后可以直接 yarn add
-```
-npm init -y
-```
+#### 不要 npm init -y 之后 yarn add
+> 直接执行下面命令
 ```
 yarn add webpack-dev-server -D
 ```
@@ -173,3 +179,16 @@ yarn install
 ```
 #### yarn 的安装
 应该通过 yarn.msi 而非 npm 安装
+
+#### 将 Babel 回退为指定版本
+1. 修改 package.json
+```
+typeScript:^5.8.38
+```
+2. 安装依赖
+```
+yarn install
+```
+3. 然后你可以执行 npm ls babel 来查看本地项目的 babel 版本
+
+
