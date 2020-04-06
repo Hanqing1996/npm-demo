@@ -32,7 +32,8 @@ C:\Users\zhq\Desktop\test
 ```
 
 #### npm init -y
-有默认选项的 npm init,推荐用这个
+* 有默认选项的 npm init
+* yarn init -y 同理。推荐用这个
 
 #### npm 原理
 > 全局没有安装webpack-cli，也可以在package.json里面的script里面直接使用脚本名，不用加上路径。npm 脚本的原理非常简单。每当执行npm run，就会自动新建一个 Shell，在这个 Shell 里面执行指定的脚本命令。因此，只要是 Shell（一般是 Bash）可以运行的命令，就可以写在 npm 脚本里面。
