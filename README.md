@@ -1,4 +1,5 @@
-# npm笔记
+#### Yarn - There appears to be trouble with your network connection. Retrying
+> Deleting the yarn.lock file and rerunning "yarn install" worked for me.
 
 #### 卸载用 npm 安装的 yarn
 ```
