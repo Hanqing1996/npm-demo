@@ -94,15 +94,11 @@ npm i -D parcel-bundler
 * 之后运行 npm install 初始化项目时不会下载模块X。
 * 注意如果根目录中一开始没有package.json文件，那么运行 npm install（-D,-g...无所谓）会生成package.json文件
 
-#### npm install X
-* 会把X包安装到node_modules目录中
-* x的版本将首先询问package.json，如果发现package.json中没有相关记录，则安装最新版本，但不会记录在package.json中
-* 之后运行npm install 初始化项目时，不会自动安装X
-
 #### npm install X --save
 * 会把X包安装到node_modules目录中
 * 若package.json中有相关记录，则按照记录安装对应版本
 * 若package.json中没有相关记录，则安装最新版本，并在package.json的dependencies属性下添加X及安装版本
+* 【注意】从 npm5 开始，—save变成了默认参数，无论写不写 —save，依赖都会保存在dependencies 里
 
 #### npm install -D X
 * 会把X包安装到node_modules目录中
@@ -196,5 +192,69 @@ typeScript:^5.8.38
 yarn install
 ```
 3. 然后你可以执行 npm ls babel 来查看本地项目的 babel 版本
+---
+#### devDependencies 和 dependencies 的区别
+1. devDependencies 是开发环境下的依赖（webpack、babel、eslint、jest 之类的测试库）。dependencies 是产生环境下的依赖（vue、react、jquery）
+2. yarn add -D xx 是把 xx 添加到 devDependencies 对象中， yarn add xx 是把 xx 添加到 dependencies 对象中。yarn global add xx 是全局安装（不安装到 node_modles 目录下）
+3. 当我们 clone 了某个库（注意不是安装别人发布在 npm/yarn 上的 lib），执行 yarn install 会依据项目的 package.json 安装 devDependencies 和 dependencies 中所描述的全部依赖。而 yarn install --production 只安装 dependencies 所包括的依赖。
+---
+#### 不是所有人都把 build 后的文件发布到 npm/yarn
+> 如果是打包好的 lib,事实上不需要任何 dependices
+* [在 npm 上发布源码](https://zhuanlan.zhihu.com/p/54255260)
+---
+> 发布npm包的话你这个包的devDependencies的依赖在别人安装你模块的时候并不会安装，只会安装dependencies里的依赖
+* 比如我发布的在 npm/yarn 上的 lib,它的 package.json是这样的
+```
+  "dependencies": {
+    "core-js": "^3.4.3",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-unit-mocha": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/component-compiler-utils": "^2.6.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-plugin-istanbul": "^5.1.4",
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "cross-env": "^5.2.0",
+    "karma": "^3.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chai-spies": "^0.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-mocha": "^1.3.0",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-webpack": "^3.0.0",
+    "mddir": "^1.1.1",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "sinon": "^7.3.2",
+    "sinon-chai": "^3.3.0",
+    "vue-server-renderer": "2.6.11",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.0.0-alpha.17"
+  },
+```
+别人安装我的 lib
+```
+yarn add -D zhq-vue-wheel
+```
+或
+```
+yarn add zhq-vue-wheel
+```
+检查此时的 node_modules,会发现目录下的文件结构是这样的
+```
+|-- node_modules
+    |-- vue
+    |-- core-js
+    |-- zhq-vue-wheel
+```
+也就是说，devDependencies 里的依赖没有被安装！
 
 
