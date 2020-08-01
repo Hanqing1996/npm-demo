@@ -1,3 +1,7 @@
+#### bash: tsc: command not found
+> yarn global add typescript
+
+
 #### Yarn - There appears to be trouble with your network connection. Retrying
 > Deleting the yarn.lock file and rerunning "yarn install" worked for me.
 
