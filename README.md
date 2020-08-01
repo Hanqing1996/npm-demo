@@ -194,7 +194,7 @@ yarn install
 3. 然后你可以执行 npm ls babel 来查看本地项目的 babel 版本
 ---
 #### devDependencies 和 dependencies 的区别
-1. devDependencies 是开发环境下的依赖（webpack、babel、eslint、jest 之类的测试库）。dependencies 是产生环境下的依赖（vue、react、jquery）
+1. devDependencies 是开发环境下的依赖（axios、webpack、babel、eslint、jest 之类的测试库）。dependencies 是产生环境下的依赖（vue、react、jquery）
 2. yarn add -D xx 是把 xx 添加到 devDependencies 对象中， yarn add xx 是把 xx 添加到 dependencies 对象中。yarn global add xx 是全局安装（不安装到 node_modles 目录下）
 3. 当我们 clone 了某个库（注意不是安装别人发布在 npm/yarn 上的 lib），执行 yarn install 会依据项目的 package.json 安装 devDependencies 和 dependencies 中所描述的全部依赖。而 yarn install --production 只安装 dependencies 所包括的依赖。
 ---
