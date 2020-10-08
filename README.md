@@ -22,11 +22,8 @@ npx yarn global add @vue/cli@4.1.2
 ```
 yarn global remove @vue/cli
 ```
-#### npm info babel
-查看 babel 的官方版本信息
-    * latest:官方最新版本
-    * next:官方下一个版本（计划中）
-    * old:官方上一个版本
+#### yarn info babel versions
+查看 babel 的版本信息(从旧到新)
 
 #### npm ls babel
 查看本地项目 babel 版本信息 
