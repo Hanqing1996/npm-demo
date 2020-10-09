@@ -115,11 +115,13 @@ npm i -D parcel-bundler
 * [npm WARN checkPermissions Missing write access](https://stackoverflow.com/questions/45106627/npm-checkpermissions-missing-write-access-to-node-modules-is)
 
 #### npx 有啥用
-参考[npm 和 npx 有什么区别？ - 天猪的回答 - 知乎](https://www.zhihu.com/question/327989736/answer/706857512),[npx 是什么 - 方应杭的文章 - 知乎](https://zhuanlan.zhihu.com/p/27840803)
+参考
+* [npm 和 npx 有什么区别？ - 天猪的回答 - 知乎](https://www.zhihu.com/question/327989736/answer/706857512)
+* [npx 是什么 - 方应杭的文章 - 知乎](https://zhuanlan.zhihu.com/p/27840803)
+* [npx 使用教程-阮一峰](https://www.ruanyifeng.com/blog/2019/02/npx.html)
 
-主要就一个作用，自动找当前项目中 node_modles 下的依赖，如果找不到就自动帮你安装！(注意是找不到才安装)
-
-也就是说
+主要作用如下
+1. 自动找当前项目中 node_modles 下的依赖，也就是说:
 ```js
 ./node_modules/.bin/webpack
 ```
@@ -127,8 +129,12 @@ npm i -D parcel-bundler
 ```js
 npx webpack
 ```
+2. 对于只使用一次的依赖（比如脚手架），我们可以使用 npx
+```
+npx create-react-app my-react-app
+```
+上面代码运行时，npx 将create-react-app下载到一个临时目录，使用以后再删除。所以，以后再次执行上面的命令，会重新下载create-react-app。
 
-这意味着
 
 #### 查看全局安装过的包
 ```
