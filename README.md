@@ -114,7 +114,21 @@ npm i -D parcel-bundler
 ---
 * [npm WARN checkPermissions Missing write access](https://stackoverflow.com/questions/45106627/npm-checkpermissions-missing-write-access-to-node-modules-is)
 
-#### [npx](https://zhuanlan.zhihu.com/p/27840803)
+#### npx 有啥用
+参考[npm 和 npx 有什么区别？ - 天猪的回答 - 知乎](https://www.zhihu.com/question/327989736/answer/706857512),[npx 是什么 - 方应杭的文章 - 知乎](https://zhuanlan.zhihu.com/p/27840803)
+
+主要就一个作用，自动找当前项目中 node_modles 下的依赖，如果找不到就自动帮你安装！(注意是找不到才安装)
+
+也就是说
+```js
+./node_modules/.bin/webpack
+```
+等价于
+```js
+npx webpack
+```
+
+这意味着
 
 #### 查看全局安装过的包
 ```
