@@ -319,11 +319,11 @@ node_modules/.bin/babel src/ndex.ts
 
 ```json
   "scripts": {
-    "dev":"babel -w;next dev",
+    "dev":"babel -w&next dev",
   },
 ```
 
-因为`;`表示两个命令是同步执行的，只有`babel -w`执行完毕才会执行`next dev`。
+因为`&`表示两个命令是同步执行的，只有`babel -w`执行完毕才会执行`next dev`。
 
 
 
