@@ -342,4 +342,19 @@ yarn add -D concurrently
 ```
 
 [![DCFNuQ.png](https://s3.ax1x.com/2020/11/14/DCFNuQ.png)](https://imgchr.com/i/DCFNuQ)
-
+---
+#### scripts 里的命令参数
+比如
+```
+typeorm entity:create -n Post
+```
+Post 是根据我们的需求写的参数。所以 Package.json 里这么写
+```
+  "scripts": {
+    "entity:create": "typeorm entity:create"
+  },
+```
+执行时，命令行语句如下
+```
+yarn entity:create -n Post
+```
