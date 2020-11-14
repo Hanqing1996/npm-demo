@@ -274,4 +274,43 @@ yarn add zhq-vue-wheel
 ```
 也就是说，devDependencies 里的依赖没有被安装！
 
+---
+#### npm-scripts
+
+参考[npm scripts 使用指南-阮一峰](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
+
+指的是 package.json 里的 scripts
+
+```json
+{
+  // ...
+  "scripts": {
+    "build": "babel src/index.ts"
+  }
+}
+```
+
+每当执行 scripts 里的命令，会将当前目录的`node_modules/.bin`子目录加入`PATH`变量，执行结束后，再将`PATH`变量恢复原样。
+
+所以
+
+```
+yarn build
+```
+
+等价于在命令行中输入
+
+```
+npx babel src/ndex.ts
+```
+
+或者
+
+```
+node_modules/.bin/babel src/ndex.ts
+```
+
+* npx 有时候用起来很慢：当你要找的包不在 node/module 目录下，也没有进行过全局安装，npx 会远程下载，并在命令执行完毕后删除临时目录，这显然适用于一次性的目录。比如 create-react-app 这样的脚手架搭建命令。这种状态下的稍慢是可以容忍的。但是要注意已在本项目 node/modules 目录下或全局安装的包，npx 不会删除（否则也太 nc 了）
+* 对于那些常见的命令，我们在开发时更推荐写入 scripts 里。
+
 
