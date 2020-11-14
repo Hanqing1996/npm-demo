@@ -312,5 +312,34 @@ node_modules/.bin/babel src/ndex.ts
 
 * npx 有时候用起来很慢：当你要找的包不在 node/module 目录下，也没有进行过全局安装，npx 会远程下载，并在命令执行完毕后删除临时目录，这显然适用于一次性的目录。比如 create-react-app 这样的脚手架搭建命令。这种状态下的稍慢是可以容忍的。但是要注意已在本项目 node/modules 目录下或全局安装的包，npx 不会删除（否则也太 nc 了）
 * 对于那些常见的命令，我们在开发时更推荐写入 scripts 里。
+---
+#### scriptS 里填写并行执行的任务
 
+比如 `babel -w` 是监控 ts 文件，一旦 change 就自动转译成 js 文件；`next dev`是开启浏览器并随代码改变自动热更新页面，此时我们这么写就会有问题
+
+```json
+  "scripts": {
+    "dev":"babel -w;next dev",
+  },
+```
+
+因为`;`表示两个命令是同步执行的，只有`babel -w`执行完毕才会执行`next dev`。
+
+
+
+真正的解决方法是使用 concurrently 
+
+```
+yarn add -D concurrently
+```
+
+然后 scripts 中这么写
+
+```json
+  "scripts": {
+    "dev":"concurrently \"babel -w\" \"next dev\"",
+  },
+```
+
+[![DCFNuQ.png](https://s3.ax1x.com/2020/11/14/DCFNuQ.png)](https://imgchr.com/i/DCFNuQ)
 
